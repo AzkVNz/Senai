@@ -247,7 +247,7 @@ inteiro estoque = 0
 			atualizar = atualizar -1
 			//Fazendo atualizar - 1, o número fica igual o vetor.
 			
-			se(atualizar < 0 ou atualizar > cont-1){
+			se(atualizar < 0 ou atualizar > cont-1 ou vetorProduto[atualizar] == ""){
 			/* Se atualizar for menor que 0:
 			 * 	o programa não conseguirá pegar o valor no vetor
 			 * 	por o vetor sempre começar pela posição 0
