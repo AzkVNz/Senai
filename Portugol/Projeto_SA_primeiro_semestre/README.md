@@ -1,0 +1,2 @@
+Olá, o projeto conscite em criar um tipo de sistema, em que o usuario possa adiconar produto, classificação, estoque, que possa ver os produtos por ordem, excluir e atualiar produtos.
+ Foi um trabalho em trio, eu e mais três colegas participaram, todos fizeram um pouco de cada, todos se ajudaram, eu fiquei com as partes do exibir produto, dentro da pasta vou deixar uma imagem base do que o professor queria, adicionamos umas coisas ali e aqui. Foi muito divertido fazer o trabalho, todos se ajudaram, trabalhamos como uma equipe e no fim o trabalho ficou como queriamos.
