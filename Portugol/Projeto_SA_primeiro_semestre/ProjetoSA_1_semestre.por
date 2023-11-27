@@ -798,7 +798,7 @@ inteiro estoque = 0
 			escreva ("                                      \n")
 			escreva ("        O Estoque total é: ",soma,"\n")
 			escreva ("______________________________________\n")	
-			Tempo1()
+			Tempo()
 		}
 		menu()
 	}
