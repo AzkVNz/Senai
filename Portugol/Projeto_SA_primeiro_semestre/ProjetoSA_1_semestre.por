@@ -648,7 +648,7 @@ inteiro estoque = 0
 				leia(indice)
 				indice = indice -1
 				////indice - 1 serve para "indice" ficar igual ao indice do vetor.
-				se(indice > cont-1 ou indice < 0){ // Indice começa com zero -1 um seria o zero para saber a posição do estoque
+				se(indice > cont-1 ou indice < 0 ou vetorProduto[indice] == ""){ // Indice começa com zero -1 um seria o zero para saber a posição do estoque
 			
 					escreva (" ______________________________________\n") 
 					escreva ("|                                      |\n")
@@ -744,7 +744,7 @@ inteiro estoque = 0
 			leia(indice)
 			indice = indice -1 // VetorEstoque -1 por que o estoque começa com zero
 			
-			se(indice > cont-1 ou indice < 0){ // se o indice que começa com zero estiver zerado ele irá informa que o Produto não foi inserido
+			se(indice > cont-1 ou indice < 0 ou vetorProduto[indice] == ""){ // se o indice que começa com zero estiver zerado ele irá informa que o Produto não foi inserido
 				escreva (" ______________________________________  \n")
 				escreva ("|                                      | \n")
 				escreva ("|         Produto não inserido         | \n")
