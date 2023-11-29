@@ -182,12 +182,15 @@ inteiro estoque = 0
 		escolha(tipo){
 			caso 1:
 				vetorClassificacao[cont] = "A"
+				vetorEstoque[cont] = 0
 			pare
 			caso 2:
 				vetorClassificacao[cont] = "B"
+				vetorEstoque[cont] = 0
 			pare
 			caso 3:
 				vetorClassificacao[cont] = "C"
+				vetorEstoque[cont] = 0
 			pare
 			caso contrario:
 			// Caso a classificação seja diferente dos apresentados
@@ -219,7 +222,7 @@ inteiro estoque = 0
 	
 	funcao atualizarProduto(){	
 		limpa()
-			
+		
 		se( cont == 0){
 		/* Como para um produto ser atualizado precisa haver um produto
 		 *  esse 'SE' confere se o "cont" está igual a zero,
@@ -237,6 +240,7 @@ inteiro estoque = 0
 		}
 		senao{
 		// Caso um produto já tiver sido inserido
+			
 			escreva (" ______________________________________\n")
 			escreva ("|                                      |\n")
 			escreva ("|           Atualizar Produto          |\n")
@@ -642,13 +646,13 @@ inteiro estoque = 0
 				escreva ("|                                      |\n")
 				escreva ("|           Adicionar Estoque          |\n")	
 				escreva ("|______________________________________|\n")
-				inteiro indice, valorEstoque, tempo
+				inteiro indice, valorEstoque
 		
 				escreva("\nDigite a posição do produto: ")
 				leia(indice)
 				indice = indice -1
 				////indice - 1 serve para "indice" ficar igual ao indice do vetor.
-				se(indice > cont-1 ou indice < 0 ou vetorProduto[indice] == ""){ // Indice começa com zero -1 um seria o zero para saber a posição do estoque
+				se(indice > cont-1 ou indice < 0){ // Indice começa com zero -1 um seria o zero para saber a posição do estoque
 			
 					escreva (" ______________________________________\n") 
 					escreva ("|                                      |\n")
@@ -744,7 +748,7 @@ inteiro estoque = 0
 			leia(indice)
 			indice = indice -1 // VetorEstoque -1 por que o estoque começa com zero
 			
-			se(indice > cont-1 ou indice < 0 ou vetorProduto[indice] == ""){ // se o indice que começa com zero estiver zerado ele irá informa que o Produto não foi inserido
+			se(indice > cont-1 ou indice < 0){ // se o indice que começa com zero estiver zerado ele irá informa que o Produto não foi inserido
 				escreva (" ______________________________________  \n")
 				escreva ("|                                      | \n")
 				escreva ("|         Produto não inserido         | \n")
@@ -818,15 +822,3 @@ inteiro estoque = 0
 	}
 	
 }
-/* $$$ Portugol Studio $$$ 
- * 
- * Esta seção do arquivo guarda informações do Portugol Studio.
- * Você pode apagá-la se estiver utilizando outro editor.
- * 
- * @POSICAO-CURSOR = 2704; 
- * @DOBRAMENTO-CODIGO = [10, 16, 165, 219, 307, 363, 445, 489, 628, 678, 723, 773, 805, 815];
- * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {cont, 5, 8, 4}-{vetorProduto, 6, 7, 12}-{vetorClassificacao, 7, 7, 18}-{vetorEstoque, 8, 8, 12};
- * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
- * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
- */
