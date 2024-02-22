@@ -8,6 +8,23 @@ public class Main {
     public static void main(String[] args) {
 
         try {
+            //URL da API do ChuckNorris
+            String apiUrl = "https://api.chucknorris.io/jokes/random";
+
+            //Fazendo a requisição GET para a API
+            HttpURLConnection conexao = (HttpURLConnection) new URL(apiUrl).openConnection();
+            conexao.setRequestMethod("GET");
+
+            //Lendo a resposta da API
+            BufferedReader leitor = new BufferedReader(new InputStreamReader(conexao.getInputStream()));
+            StringBuilder resposta = new StringBuilder();
+            String linha;
+            while ((linha = leitor.readLine()) != null) {
+                resposta.append(linha);
+
+            }
+            leitor.close();
+            
             String piada = obterPiadaCuckNorris();
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -15,22 +32,7 @@ public class Main {
     }
 
     private static String obterPiadaCuckNorris() throws IOException {
-        //URL da API do ChuckNorris
-        String apiUrl = "https://api.chucknorris.io/jokes/random";
 
-        //Fazendo a requisição GET para a API
-        HttpURLConnection conexao = (HttpURLConnection) new URL(apiUrl).openConnection();
-        conexao.setRequestMethod("GET");
-
-        //Lendo a resposta da API
-        BufferedReader leitor = new BufferedReader(new InputStreamReader(conexao.getInputStream()));
-        StringBuilder resposta = new StringBuilder();
-        String linha;
-        while ((linha = leitor.readLine()) != null) {
-            resposta.append(linha);
-
-        }
-        leitor.close();
 
         //Extrair a piada do JSON
         int inicioDoIndice = resposta.indexOf("\"value\":") + ("\"value\":".length());
