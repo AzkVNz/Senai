@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
+import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,14 +25,17 @@ public class Main {
 
             }
             leitor.close();
-            
-            String piada = obterPiadaCuckNorris();
+
+            String piada = obterPiadaCuckNorris(resposta.toString());
+            System.out.println("Piada: " + piada);
+
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static String obterPiadaCuckNorris() throws IOException {
+    private static String obterPiadaCuckNorris(String resposta)  {
 
 
         //Extrair a piada do JSON
