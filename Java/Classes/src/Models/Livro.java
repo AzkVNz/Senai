@@ -1,6 +1,6 @@
 /*
-Exercício 3: A Classe Livro
-1. Crie uma classe Livro com os atributos: titulo (String), autor (String),
+Exercício 3: A Classe Models.Livro
+1. Crie uma classe Models.Livro com os atributos: titulo (String), autor (String),
 anoDePublicacao (int) e estaEmprestado (boolean).
 2. Adicione um construtor para inicializar todos os atributos exceto
 estaEmprestado , que deve ser inicializado como false .
@@ -10,6 +10,9 @@ emprestado, deve ser exibida uma mensagem de erro.
 4. Crie um método imprimirInformacoes() que mostra todas as informações do
 livro.
  */
+
+
+package Models;
 
 public class Livro {
     private String titulo;

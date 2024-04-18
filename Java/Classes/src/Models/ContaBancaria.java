@@ -1,6 +1,6 @@
 /*
-Exercício 2: A Classe ContaBancaria
-1. Defina uma classe ContaBancaria com os atributos privados: numeroDaConta
+Exercício 2: A Classe Models.ContaBancaria
+1. Defina uma classe Models.ContaBancaria com os atributos privados: numeroDaConta
 (String), nomeDoTitular (String) e saldo (double).
 2. Crie um construtor para inicializar os atributos numeroDaConta e nomeDoTitular .
 O saldo inicial deve ser 0.
@@ -12,6 +12,8 @@ realizada, imprima uma mensagem de erro.
 5. Adicione um método imprimirExtrato() que mostra o nome do titular, o
 número da conta e o saldo atual.
  */
+
+package Models;
 
 public class ContaBancaria {
 

@@ -1,6 +1,6 @@
 /*
-Exercício 4: A Classe Calculadora
-1. Implemente uma classe Calculadora que não possui atributos.
+Exercício 4: A Classe Models.Calculadora
+1. Implemente uma classe Models.Calculadora que não possui atributos.
 2. Adicione métodos estáticos para as quatro operações básicas: adição, subtração,
 multiplicação e divisão. Cada método deve aceitar dois parâmetros numéricos e
 retornar o resultado da operação.
@@ -8,6 +8,7 @@ retornar o resultado da operação.
 retornando 0 se o denominador for 0 .
  */
 
+package Models;
 public class Calculadora {
 
     private static double n1;

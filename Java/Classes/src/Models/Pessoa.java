@@ -1,6 +1,6 @@
 /*
-Exercício 1: A Classe Pessoa
-1. Crie uma classe chamada Pessoa com os seguintes atributos privados: nome
+Exercício 1: A Classe Models.Pessoa
+1. Crie uma classe chamada Models.Pessoa com os seguintes atributos privados: nome
 (String), idade (int) e altura (double).
 2. Adicione um construtor que inicialize esses atributos.
 3. Implemente métodos públicos para obter (getters) e definir (setters) cada um
@@ -8,6 +8,8 @@ dos atributos.
 4. Adicione um método falar() que imprime no console uma mensagem que diz:
 "Olá, meu nome é [nome] e eu tenho [idade] anos."
  */
+
+package Models;
 
 public class Pessoa {
 
