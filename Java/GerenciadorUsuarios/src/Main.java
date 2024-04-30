@@ -12,7 +12,7 @@ public class Main {
         int escolha = imput.nextInt();
 
 
-        switch (escolha){
+        switch (escolha) {
             case 1:
                 String id, nome, email;
                 System.out.printf("Informe o ID: ");
@@ -21,8 +21,10 @@ public class Main {
                 nome = imput.nextLine();
                 System.out.printf("Informe seu e-mail: ");
                 email = imput.nextLine();
-                Usuario usuario = new Usuario(id,nome,email);
+                Usuario usuario = new Usuario(id, nome, email);
                 comando.AdicionarUsuario(usuario);
+
+                break;
         }
 
     }

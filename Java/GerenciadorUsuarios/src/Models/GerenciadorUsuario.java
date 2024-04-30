@@ -10,15 +10,17 @@ public class GerenciadorUsuario {
 
     private List<Usuario> usuarios = new ArrayList<>();
 
-    public void AdicionarUsuario(Usuario usuario){
-        for(int i = 0; i < usuarios.size(); i++){
+    public boolean AdicionarUsuario(Usuario usuario) {
+        for (int i = 0; i < usuarios.size(); i++) {
 
-            if (usuario.getId().equals(usuarios.get(i).getId())){
+            if (usuario.getId().equals(usuarios.get(i).getId())) {
                 System.out.println("ID já utilizado");
-                return;
+                return false;
             }
         }
-            System.out.println();
+        usuarios.add(usuario);
+        System.out.println("Usuario adicionado");
+        return true;
     }
 
 
