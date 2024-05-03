@@ -1,6 +1,7 @@
 import Models.Carros;
 import Models.GerenciadorDeCarros;
 
+import javax.sound.midi.Soundbank;
 import java.util.List;
 import java.util.Scanner;
 
@@ -46,20 +47,58 @@ public class Main {
                     ListaDeCarros.forEach(System.out::println);
                     break;
 
-                case 3:
-                    System.out.printf("Você deseja\n1 - Atualizar o modelo e a cor\n2 - Apenas o modelo\n3 - Apenas a cor");
-                    int escolha = imput.nextInt();
 
-                    switch (escolha){
+                case 3:
+                    System.out.println("Informe a placa para procurar o carro:");
+                    String placaParaLocalizacao = imput.nextLine();
+                    System.out.println(gerenciar.ObterCarroPorPlaca(placaParaLocalizacao));
+                    break;
+
+                case 4:
+                    System.out.println("Você deseja\n1 - Atualizar o modelo e a cor\n2 - Apenas o modelo\n3 - Apenas a cor");
+                    int escolha = imput.nextInt();
+                    imput.nextLine();
+
+                    switch (escolha) {
                         case 1:
-                            System.out.printf("Informe a placa para poder atualizar a cor e modelo:");
-                            String placaParaAtualizar = imput.nextLine();
-                            System.out.printf("Nova cor:");
+                            System.out.println("Informe a placa para poder atualizar a cor e modelo:");
+                            String placaParaProcurar = imput.nextLine();
+                            if (gerenciar.CompararPlaca(placaParaProcurar) == true) {
+                                break;
+                            }
+                            System.out.println("Nova cor:");
                             String novaCor = imput.nextLine();
-                            System.out.printf("Novo modelo");
+                            System.out.println("Novo modelo");
                             String novoModelo = imput.nextLine();
-                            gerenciar
+                            gerenciar.AtualizarModeloECor(placaParaProcurar, novaCor, novoModelo);
+                            break;
+
+                        case 2:
+                            System.out.println("Informe a placa para poder atualizar a cor");
+                            String placaParaProcura2 = imput.nextLine();
+                            if (gerenciar.CompararPlaca(placaParaProcura2) == true) {
+                                break;
+                            }
+                            System.out.println("Informe a nova cor");
+                            String novaCor2 = imput.nextLine();
+                            gerenciar.AtualizarCor(placaParaProcura2, novaCor2);
+                            break;
+
+                        case 3:
+                            System.out.println("Informe a placa para poder atualizar a cor");
+                            String placaParaProcura3 = imput.nextLine();
+                            if (gerenciar.CompararPlaca(placaParaProcura3) == true) {
+                                break;
+                            }
+                            System.out.println("Informe o novo modelo:");
+                            String novoModelo2 = imput.nextLine();
+                            gerenciar.AtualizarModelo(placaParaProcura3, novoModelo2);
+                            break;
                     }
+
+                    break;
+
+
             }
 
 
