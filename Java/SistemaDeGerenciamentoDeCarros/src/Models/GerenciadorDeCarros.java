@@ -6,14 +6,16 @@ import java.util.List;
 public class GerenciadorDeCarros {
     private List<Carros> ListaDeCarros = new ArrayList<>();
 
-    public boolean adicionarCarro(Carros carros) {
+
+    public boolean adicionarCarro(Carros CarroInformado) {
         for (Carros car : ListaDeCarros) {
-            if (car.getPlaca().equals(carros.getPlaca())) {
+            if (car.getPlaca().equals(CarroInformado.getPlaca())) {
                 return false;
             }
 
         }
-        ListaDeCarros.add(carros);
+        ListaDeCarros.add(CarroInformado);
+
         return true;
     }
 
@@ -31,6 +33,7 @@ public class GerenciadorDeCarros {
         return null;
     }
 
+
     public Carros ObterCarroPorPlaca(String placaParaLocalizacao) {
         for (Carros carros : ListaDeCarros) {
             if (carros.getPlaca().equals(placaParaLocalizacao)) {
@@ -39,7 +42,6 @@ public class GerenciadorDeCarros {
         }
         return null;
     }
-
 
     public boolean CompararPlaca(String placaParaComparar) {
         for (Carros carros : ListaDeCarros) {
@@ -58,8 +60,7 @@ public class GerenciadorDeCarros {
             atualizarModeloECor.setModelo(novoModelo);
             System.out.println("Cor e modelo atualizados!");
 
-        } else {
-            System.out.println("Essa placa não existe no sistema!");
+
         }
 
     }
@@ -69,10 +70,7 @@ public class GerenciadorDeCarros {
         if (atualizarCor != null) {
             atualizarCor.setCor(novaCor2);
             System.out.println("Cor atualizada!");
-        } else {
-            System.out.println("Essa placa não existe no sistema!");
         }
-
     }
 
     public void AtualizarModelo(String placaParaProcura3, String novoModelo2) {
@@ -80,9 +78,11 @@ public class GerenciadorDeCarros {
         if (atualizarModelo != null) {
             atualizarModelo.setModelo(novoModelo2);
             System.out.println("Modelo atualizado!");
-        } else {
-            System.out.println("Essa placa não existe no sistema!");
         }
     }
-}
 
+    public void ExluirCarroPorId(String placaParaExcluir) {
+        ListaDeCarros.removeIf(Carros -> Carros.getPlaca().equals(placaParaExcluir));
+        System.out.println("Carro excluido!");
+    }
+}

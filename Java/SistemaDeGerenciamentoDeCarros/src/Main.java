@@ -32,14 +32,15 @@ public class Main {
                     System.out.println("Ano de fabricação:");
                     int anoDeFabricacao = imput.nextInt();
                     Carros novoCarro = new Carros(placa, modelo, cor, anoDeFabricacao);
-                    imput.nextLine();
 
                     if (!gerenciar.adicionarCarro(novoCarro)) {
-                        System.out.println("Já existe um carro com essa placa!\n");
+                        System.out.println("Não foi possível adicionar seus dados, já existe um carro com essa placa!\n");
                     } else {
                         System.out.println("Carro adicionado!\n");
                     }
+
                     break;
+
 
                 case 2:
                     System.out.println("Lista de todos os carros cadastrados:");
@@ -51,6 +52,9 @@ public class Main {
                 case 3:
                     System.out.println("Informe a placa para procurar o carro:");
                     String placaParaLocalizacao = imput.nextLine();
+                    if(gerenciar.CompararPlaca(placaParaLocalizacao)){
+                        break;
+                    }
                     System.out.println(gerenciar.ObterCarroPorPlaca(placaParaLocalizacao));
                     break;
 
@@ -98,7 +102,18 @@ public class Main {
 
                     break;
 
+                case 5:
+                    System.out.println("Informe a placa do carro para poder excluir:");
+                    String placaParaExcluir = imput.nextLine();
+                    gerenciar.ExluirCarroPorId(placaParaExcluir);
+                    break;
 
+
+                case 6:
+                    imput.close();
+                    return;
+                default:
+                    System.out.println("Opção invalida");
             }
 
 
