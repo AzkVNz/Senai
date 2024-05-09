@@ -1,8 +1,12 @@
-#Sistema de Gerenciamento de Projetos
+# Sistema de Gerenciamento de Produtos
 
-Desenvolva um sistema para gerenciar projetos de uma empresa ou
-organização. O sistema deve incluir:
+Implemente um sistema de gerenciamento de produtos para uma loja. O
+sistema deve incluir:
 
--Atributos de projeto: código, nome, gerente de projeto e prazo final.
--Funções de CRUD para adicionar, listar, atualizar e remover projetos.
--Um método para calcular quantos dias faltam até o prazo final do projeto.
+°Atributos de produto: código, nome, categoria e preço.
+
+°Funções de CRUD completas para adicionar, listar, atualizar e remover
+produtos.
+
+°Opções de atualização específicas para modificar apenas o preço ou a
+categoria. 
